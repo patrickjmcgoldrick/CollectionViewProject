@@ -10,8 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet private weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +22,6 @@ class ViewController: UIViewController {
 
 extension ViewController: UICollectionViewDataSource {
    
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return 100 //Int(pow(Double(section + 1),Double(2)))
@@ -46,7 +44,7 @@ extension ViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
-        if (kind == UICollectionView.elementKindSectionFooter) {
+        if kind == UICollectionView.elementKindSectionFooter {
             guard let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "FooterCell", for: indexPath) as? FooterView
                 else { return UICollectionReusableView() }
             
@@ -64,6 +62,4 @@ extension ViewController: UICollectionViewDelegate {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         1
     }
-
-    
 }

@@ -1,14 +1,17 @@
 //
-//  FooterView.swift
+//  K.swift
 //  CollectionViewFooter
 //
 //  Created by dirtbag on 12/3/19.
 //  Copyright © 2019 dirtbag. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class FooterView: UICollectionReusableView {
+struct K {
+    
+    struct Image {
         
-    @IBOutlet weak var lblFooter: UILabel!
+        static let babyYoda = "babyYoda"
+    }
 }

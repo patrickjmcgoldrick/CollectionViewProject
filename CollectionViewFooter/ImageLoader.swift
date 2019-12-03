@@ -10,17 +10,15 @@ import UIKit
 
 class ImageLoader {
 
+    var imageCache = [String: UIImage]()
+    let index = 2
     let placeHolder = [ "https://loremflickr.com/",
                         "https://placekitten.com/",
                         "https://www.placecage.com/",
                         "https://placebear.com/",
                         "https://picsum.photos/"
                     ]
-    
-    let index = 2
-    
-    var imageCache = [String: UIImage]()
-    
+        
     func loadImageInto(imageView: UIImageView, width: Int, height: Int) {
         
         // check the cache
@@ -30,7 +28,7 @@ class ImageLoader {
         }
 
         // insert placeholder
-        imageView.image = UIImage(named: "babyYoda")
+        imageView.image = UIImage(named: K.Image.babyYoda)
         
         // load real image
         DispatchQueue.global(qos: .background).async {
@@ -59,10 +57,9 @@ class ImageLoader {
         guard let image = imageCache[dimString] else { return false }
         
         updateUI(imageView: imageView, image: image)
-        print ("Cache hit!")
+        print("Cache hit!")
         
         return true
-        
     }
     private func loadImage(urlString: String, imageLoaded: @escaping (Data) -> Void) {
 
@@ -76,4 +73,3 @@ class ImageLoader {
         }.resume()
     }
 }
-
