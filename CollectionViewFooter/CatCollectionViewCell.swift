@@ -10,6 +10,6 @@ import UIKit
 
 class CatCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var lblAnimal: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
     
 }

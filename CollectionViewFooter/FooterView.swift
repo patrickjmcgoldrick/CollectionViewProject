@@ -12,5 +12,4 @@ class FooterView: UICollectionReusableView {
         
     @IBOutlet weak var lblFooter: UILabel!
     
-    
 }

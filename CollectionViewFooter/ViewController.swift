@@ -13,24 +13,20 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var data = ["Dog", "Cat", "Mouse", "Tarantula", "Dog", "Cat", "Mouse", "Tarantula", "Dog", "Cat"]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         collectionView.dataSource = self
         collectionView.delegate = self
-        
     }
-
-
 }
 
 extension ViewController: UICollectionViewDataSource {
+   
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return Int(pow(Double(section + 1),Double(2)))
+        return 100 //Int(pow(Double(section + 1),Double(2)))
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -38,8 +34,12 @@ extension ViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CatCell", for: indexPath) as? CatCollectionViewCell
             else { return UICollectionViewCell() }
         
-        cell.lblAnimal.text = data[indexPath.row % 10]
-        cell.backgroundColor = .systemTeal
+        let width = Int.random(in: 100...250)
+        let height = Int.random(in: 100...250)
+        
+        cell.frame = CGRect(x: 0, y: 0, width: width, height: height)
+        
+        ImageLoader().loadImageInto(imageView: cell.imageView, width: width, height: height)
         
         return cell
     }
@@ -62,7 +62,7 @@ extension ViewController: UICollectionViewDataSource {
 extension ViewController: UICollectionViewDelegate {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        10
+        1
     }
 
     
