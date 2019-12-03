@@ -34,8 +34,8 @@ extension ViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CatCell", for: indexPath) as? CatCollectionViewCell
             else { return UICollectionViewCell() }
         
-        let width = Int.random(in: 100...250)
-        let height = Int.random(in: 100...250)
+        let width = Int.random(in: 150...250)
+        let height = Int.random(in: 150...250)
         
         cell.frame = CGRect(x: 0, y: 0, width: width, height: height)
         
@@ -50,7 +50,7 @@ extension ViewController: UICollectionViewDataSource {
             guard let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "FooterCell", for: indexPath) as? FooterView
                 else { return UICollectionReusableView() }
             
-            footerView.lblFooter.text = "These are the top: \(Int(pow(Double(indexPath.section + 1),Double(2))))"
+            footerView.lblFooter.text = "This is my Footer"
             
             // Customize footerView here
             return footerView

@@ -19,33 +19,49 @@ class ImageLoader {
     
     let index = 2
     
-    let imageCache = [String: UIImage]()
+    var imageCache = [String: UIImage]()
     
     func loadImageInto(imageView: UIImageView, width: Int, height: Int) {
         
+        // check the cache
+        let dimString = "\(width)/\(height)"
+        if checkCache(imageView: imageView, dimString: dimString) {
+            return
+        }
+
         // insert placeholder
         imageView.image = UIImage(named: "babyYoda")
         
         // load real image
         DispatchQueue.global(qos: .background).async {
 
-            let urlString = "\(self.placeHolder[self.index])/\(width)/\(height)"
+            let urlString = "\(self.placeHolder[self.index])/\(dimString)"
             
             self.loadImage(urlString: urlString) { (data) in
 
                 if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        imageView.frame = CGRect(x: 0, y: 0, width: width, height: height)
-                        imageView.image = image
-                    }
+                    self.updateUI(imageView: imageView, image: image)
+                    self.imageCache[dimString] = image
                 }
             }
         }
     }
     
-    private func checkCache(dimString: String) -> UIImage? {
+    private func updateUI(imageView: UIImageView, image: UIImage) {
+        DispatchQueue.main.async {
+            //imageView.frame = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
+            imageView.image = image
+        }
+    }
+    
+    private func checkCache(imageView: UIImageView, dimString: String) -> Bool {
         
-        return imageCache[dimString]
+        guard let image = imageCache[dimString] else { return false }
+        
+        updateUI(imageView: imageView, image: image)
+        print ("Cache hit!")
+        
+        return true
         
     }
     private func loadImage(urlString: String, imageLoaded: @escaping (Data) -> Void) {
