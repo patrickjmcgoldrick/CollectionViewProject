@@ -50,7 +50,7 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="FooterCell" id="CBq-pa-SkS">
+                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="FooterCell" id="CBq-pa-SkS" customClass="FooterView" customModule="CollectionViewFooter" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="50" width="414" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -68,6 +68,9 @@
                                         <constraint firstItem="2mg-sT-Zfe" firstAttribute="top" secondItem="CBq-pa-SkS" secondAttribute="topMargin" id="azz-wa-lF7"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="2mg-sT-Zfe" secondAttribute="bottom" id="i76-CW-BTd"/>
                                     </constraints>
+                                    <connections>
+                                        <outlet property="lblFooter" destination="2mg-sT-Zfe" id="Bur-kN-FSj"/>
+                                    </connections>
                                 </collectionReusableView>
                             </collectionView>
                         </subviews>

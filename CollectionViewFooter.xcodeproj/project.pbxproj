@@ -17,6 +17,7 @@
 		5E5271FF239623EE00E596DA /* CollectionViewFooterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5271FE239623EE00E596DA /* CollectionViewFooterTests.swift */; };
 		5E52720A239623EE00E596DA /* CollectionViewFooterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E527209239623EE00E596DA /* CollectionViewFooterUITests.swift */; };
 		5E5272182396259400E596DA /* CatCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5272172396259400E596DA /* CatCollectionViewCell.swift */; };
+		5E52721A2396396C00E596DA /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5272192396396C00E596DA /* FooterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		5E527209239623EE00E596DA /* CollectionViewFooterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewFooterUITests.swift; sourceTree = "<group>"; };
 		5E52720B239623EE00E596DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E5272172396259400E596DA /* CatCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatCollectionViewCell.swift; sourceTree = "<group>"; };
+		5E5272192396396C00E596DA /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				5E5271E4239623EB00E596DA /* AppDelegate.swift */,
 				5E5271E6239623EB00E596DA /* SceneDelegate.swift */,
 				5E5271E8239623EB00E596DA /* ViewController.swift */,
+				5E5272192396396C00E596DA /* FooterView.swift */,
 				5E5272172396259400E596DA /* CatCollectionViewCell.swift */,
 				5E5271EA239623EB00E596DA /* Main.storyboard */,
 				5E5271F0239623ED00E596DA /* Assets.xcassets */,
@@ -268,6 +271,7 @@
 				5E5272182396259400E596DA /* CatCollectionViewCell.swift in Sources */,
 				5E5271E9239623EB00E596DA /* ViewController.swift in Sources */,
 				5E5271EF239623EB00E596DA /* CollectionViewFooter.xcdatamodeld in Sources */,
+				5E52721A2396396C00E596DA /* FooterView.swift in Sources */,
 				5E5271E5239623EB00E596DA /* AppDelegate.swift in Sources */,
 				5E5271E7239623EB00E596DA /* SceneDelegate.swift in Sources */,
 			);
